@@ -1,9 +1,12 @@
-const { model, Schema } = require("mongoose");
-
-const postSchema = new Schema(
+//const { model, Schema } = require("mongoose");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const postSchema = Schema(
   {
     content: String,
-    creatorId: String,
+    creatorId: {
+      type: Schema.Types.ObjectId
+    },
     picPath: String,
     picName: String
   },
@@ -13,4 +16,7 @@ const postSchema = new Schema(
   }
 );
 
-module.exports = model("Post", postSchema);
+//module.exports = model("Post", postSchema);
+const Post = mongoose.model("Post", postSchema);
+
+module.exports = Post;
