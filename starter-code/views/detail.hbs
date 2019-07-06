@@ -1,0 +1,36 @@
+<h2>Pic detail</h2>
+
+<div class="pic-detail">
+  <img src="{{this.picPath}}" alt="">
+  <h4>{{this.content}}</h4>
+ 
+ 
+  <h2>Comments</h2>
+
+    {{#each comments}}
+    <p> {{this.content}} </p>
+    {{#if this.imgPath}}
+    <img src="{{this.imgPath}}" alt="{{this.imgName}}">
+    {{/if}}
+    {{/each}}
+
+
+<h2>Add comments</h2>
+<form action="/comment/{{_id}}" method="POST" enctype="multipart/form-data">
+    <label for="content" class="label-content">Content</label>
+    <textarea name="content" rows="5" cols="40" placeholder="Write here!"></textarea>
+
+    <h4>Image </h4>
+    <input type="file" name="photo">
+    <input type="submit" value="Submit">
+</form>
+
+
+
+
+
+<a href="/">Go back</a>
+
+</div>
+
+
