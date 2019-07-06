@@ -8,10 +8,18 @@
 
 <body>
   <h1>Welcome to IronTumblr</h1>
+{{#each pics}}
 
-  <form>
-
-  </form>
+<div class="pic-item">
+  <img src="{{this.picPath}}" alt="">
+  <h4>{{this.content}}</h4>
+  <a href='/detail/{{this._id}}'>View Detail</a>
+</div>
+{{else}}
+<p>There are no pictures yet! </p>
+{{/each}}
 </body>
 
 </html>
+
+

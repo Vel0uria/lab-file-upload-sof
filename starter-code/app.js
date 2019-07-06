@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
@@ -14,7 +15,7 @@ const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const hbs = require("hbs");
 
-mongoose.connect("mongodb://localhost/tumblr-lab-development");
+mongoose.connect(process.env.DB, { useNewUrlParser: true });
 
 const app = express();
 
